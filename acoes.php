@@ -8,7 +8,7 @@ $novoFuncionario = [
     "last_name" => $_POST["last_name"],
     "email" => $_POST["email"],
     "gender" => $_POST["gender"],
-    "ip_adress" => $_POST["ip_adress"],
+    "ip_address" => $_POST["ip_address"],
     "country" => $_POST["country"],
     "department" => $_POST["department"],
 ];
@@ -16,4 +16,3 @@ $novoFuncionario = [
 adicionarFuncionario("./dados/empresaX.json", $novoFuncionario);
 
 header("location: index.php");
-?>

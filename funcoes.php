@@ -1,5 +1,4 @@
 <?php
-
 //recebe o nome do arquivo
 function lerArquivo($nomeArquivo){
 //lÊ o arquivo como string
@@ -7,45 +6,43 @@ function lerArquivo($nomeArquivo){
 //echo $arquivo;
 
 //transforma a string em array
-    $jsonArray = json_decode($arquivo);
+    $arquivoArr = json_decode($arquivo);
 
     // var_dump($jsonArray);exit;
 
 //print_r($jsonArray);
 
 //devolve o array
-return $jsonArray;
+    return $arquivoArr;
 }
 
 
 
 //busca o aluno dentro da lista e
 // devolve uma lista com os alunos encontrados
-function buscarFuncionarioNome($funcionarios, $filtro){
-
+function buscarFuncionario($funcionarios, $filtro){
 
     $funcionariosFiltro = [];
+
     foreach($funcionarios as $funcionario){
-        if(strpos($funcionario->first_name, $filtro) !== false
+        if(
+        strpos($funcionario->first_name, $filtro) !== false
         ||
         strpos($funcionario->last_name, $filtro) !== false
         ||
         strpos($funcionario->department, $filtro) !== false
         ){
             $funcionariosFiltro[] = $funcionario;
-           
         }
-        
     }
 
-   
     return $funcionariosFiltro;
     
 }
 
 function adicionarFuncionario($nomeArquivo, $novoFuncionario){
 
-    $funcionarios = $lerArquivo($nomeArquivo);
+    $funcionarios = lerArquivo($nomeArquivo);
 
     $funcionarios[] = $novoFuncionario;
 

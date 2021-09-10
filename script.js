@@ -12,8 +12,7 @@
 }*/
 
 function showModal(){
-    document.querySelector("modal-form").style.display = "flex";
+    document.querySelector(".modal-form").style.display = "flex";
 
 }
-document.getElementsById("btnAddFuncionario")
-    .addEventListener("click", showModal);
+document.getElementById("btnAddFuncionario").addEventListener("click", showModal);
