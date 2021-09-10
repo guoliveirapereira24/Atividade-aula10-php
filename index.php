@@ -2,7 +2,7 @@
 
     require("./funcoes.php");
 
-    $funcionarios = lerArquivo("empresaX.json");
+    $funcionarios = lerArquivo("./empresaX.json");
 
 
 if (isset($_GET["buscarFuncionario"]) && $_GET["filtro"] !=""){
