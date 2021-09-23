@@ -12,8 +12,6 @@
     echo '<pre>';*/
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="pt">
 
