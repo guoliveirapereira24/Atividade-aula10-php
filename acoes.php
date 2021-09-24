@@ -10,7 +10,8 @@
         "gender" => $_POST["gender"],
         "ip_address" => $_POST["ip_address"],
         "country" => $_POST["country"],
-        "department" => $_POST["department"]
+        "department" => $_POST["department"],
+        "senha" => $_POST["senha"]
     ];
 
     adicionarFuncionario("./dados/empresaX.json", $novoFuncionario);

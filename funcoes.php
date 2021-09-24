@@ -91,3 +91,23 @@ function editarFuncionario($nomeArquivo, $funcionarioEditado){
     file_put_contents($nomeArquivo, $json);
 
 }
+function realizarLogin($first_name, $senha, $dados){
+        
+    foreach ($dados as $dado) {
+        if ( $dado->first_name == $first_name && $dado->senha == $senha) {
+        
+        //$dados = json_decode("./dados/usuarios.json");  
+        //VARIAVEIS DE SESSÃO:
+        
+        $_SESSION["first_name"] = $dado->first_name;
+        $_SESSION["id"] = session_id();
+        $_SESSION["data_hora"] = date('d/m/y - h:i:s');
+
+        header("location: area_restrita.php");
+        exit;
+
+}   
+}
+
+header('location: index.php');
+}

@@ -2,6 +2,7 @@
 
 require("./funcoes.php");
 
+
 $funcionarios = lerArquivo("./dados/empresaX.json");
 
 if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
@@ -17,7 +18,6 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles-global.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="./script.js" defer></script>
   <title>Empresa X</title>
 </head>
 
@@ -27,6 +27,22 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
     <p style="text-align: center">
       A empresa conta com <em> <?= count($funcionarios) ?> </em> funcionários.
     </p>
+
+    <div class='toolbar'>
+
+<h2>
+
+    <?php echo 'Seja bem vindo(a)'; ?>
+
+</h2>
+
+<h2>
+
+   <a class="material-icons" href="processa_login.php?logout=true">logout</a>
+
+</h2>
+
+</div>
     <form method="GET" class="search-form">
       <div class="input-group" style="flex: 1">
         <label>Pesquisar por nome</label>
@@ -49,6 +65,7 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
         <input type="text" placeholder="Digite o IP" name="ip_address" />
         <input type="text" placeholder="Digite o país" name="country" />
         <input type="text" placeholder="Digite o departamento" name="department" />
+        <input type="text" placeholder="Digite a senha" name="senha" />
         <button>Salvar</button>
       </form>
     </div>
@@ -77,6 +94,9 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
         </th>
         <th>
           Departamento
+        </th>
+        <th>
+          Senha
         </th>
         <th>
           Ações
@@ -110,6 +130,10 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
           <td>
             <?= $funcionario->department ?>
           </td>
+          <td>
+            <?= $funcionario->senha ?>
+          </td>
+          
           <td>
   
             <button onclick="editar(<?= $funcionario->id ?>)" class="material-icons">edit</button>

@@ -40,6 +40,7 @@
                 <input type="text" placeholder="Digite o IP" name="ip_address" value="<?= $funcionario->ip_address?>"/>
                 <input type="text" placeholder="Digite o país" name="country" value="<?= $funcionario->country?>"/>
                 <input type="text" placeholder="Digite o departamento" name="department" value="<?= $funcionario->department?>"/>
+                <input type="text" placeholder="Digite a senha" name="senha" value="<?= $funcionario->senha?>"/>
                 <button>Salvar</button>
             <?php } ?>
         </form>
